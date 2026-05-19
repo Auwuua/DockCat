@@ -1,7 +1,7 @@
 import AppKit
 
 @MainActor
-final class CatMenuController {
+final class CatMenuController: NSObject {
     var onPet: (() -> Void)?
     var onOuting: (() -> Void)?
     var onSettings: (() -> Void)?

@@ -7,14 +7,13 @@ export COPYFILE_DISABLE=1
 PROJECT="DockCatApp/DockCat.xcodeproj"
 SCHEME="DockCat"
 CONFIGURATION="Release"
-DERIVED_DATA="DockCatApp/DerivedDataClean"
+DERIVED_DATA="DockCatApp/DerivedDataRelease"
 APP_PATH="$DERIVED_DATA/Build/Products/$CONFIGURATION/DockCat.app"
 EXECUTABLE_PATH="$APP_PATH/Contents/MacOS/DockCat"
 README_PATH="README.md"
 README_EN_PATH="README.en.md"
 LICENSE_PATH="LICENSE.txt"
-IMAGE_PROMPTS_PATH="ImageGenerationPrompts.md"
-CAT_CUSTOMIZATION_PATH="CatCustomization.md"
+CUSTOMIZATION_GUIDE_PATH="CustomizationGuide"
 ZIP_PATH="DockCat.zip"
 
 echo "Clean building DockCat for packaging..."
@@ -60,13 +59,8 @@ if [[ ! -f "$LICENSE_PATH" ]]; then
   exit 1
 fi
 
-if [[ ! -f "$IMAGE_PROMPTS_PATH" ]]; then
-  echo "ImageGenerationPrompts.md was not found."
-  exit 1
-fi
-
-if [[ ! -f "$CAT_CUSTOMIZATION_PATH" ]]; then
-  echo "CatCustomization.md was not found."
+if [[ ! -d "$CUSTOMIZATION_GUIDE_PATH" ]]; then
+  echo "CustomizationGuide folder was not found."
   exit 1
 fi
 
@@ -78,8 +72,8 @@ ditto --norsrc "$APP_PATH" "$PACKAGE_DIR/DockCat.app"
 cp "$README_PATH" "$PACKAGE_DIR/README.md"
 cp "$README_EN_PATH" "$PACKAGE_DIR/README.en.md"
 cp "$LICENSE_PATH" "$PACKAGE_DIR/LICENSE.txt"
-cp "$IMAGE_PROMPTS_PATH" "$PACKAGE_DIR/ImageGenerationPrompts.md"
-cp "$CAT_CUSTOMIZATION_PATH" "$PACKAGE_DIR/CatCustomization.md"
+mkdir -p "$PACKAGE_DIR/CustomizationGuide"
+cp -R "$CUSTOMIZATION_GUIDE_PATH"/. "$PACKAGE_DIR/CustomizationGuide/"
 
 echo "Checking packaged app contents..."
 if find "$PACKAGE_DIR/DockCat.app" \
@@ -104,7 +98,7 @@ if find "$PACKAGE_DIR/DockCat.app" \
   exit 1
 fi
 
-echo "Packing DockCat.app, README.md, README.en.md, LICENSE.txt, ImageGenerationPrompts.md, and CatCustomization.md..."
+echo "Packing DockCat.app, CustomizationGuide, README.md, README.en.md, and LICENSE.txt..."
 rm -f "$ZIP_PATH"
 ditto -c -k --norsrc "$PACKAGE_DIR" "$ZIP_PATH"
 

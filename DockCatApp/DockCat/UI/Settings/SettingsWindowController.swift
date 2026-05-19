@@ -68,6 +68,7 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
 
     func show() {
         if let window {
+            RuntimeDiagnostics.record("settings show existing visible=\(window.isVisible) frame=\(window.frame)")
             window.title = AppStrings(language: settings.language).settingsWindowTitle
             if let hosting = window.contentViewController as? NSHostingController<SettingsView> {
                 hosting.rootView = makeSettingsView()
@@ -83,10 +84,12 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
         window.setContentSize(NSSize(width: 520, height: 580))
         window.styleMask = [.titled, .closable, .miniaturizable]
         window.level = NSWindow.Level(rawValue: NSWindow.Level.floating.rawValue + 1)
+        window.collectionBehavior = [.canJoinAllSpaces]
         window.isReleasedWhenClosed = false
         window.delegate = self
         self.window = window
         centerOnActiveScreen(window)
+        RuntimeDiagnostics.record("settings show created frame=\(window.frame)")
         bringToFront(window)
     }
 
@@ -131,9 +134,11 @@ final class SettingsWindowController: NSObject, NSWindowDelegate {
         if window.isMiniaturized {
             window.deminiaturize(nil)
         }
+        NSApp.unhide(nil)
         NSApp.activate(ignoringOtherApps: true)
         window.makeKeyAndOrderFront(nil)
         window.orderFrontRegardless()
+        RuntimeDiagnostics.record("settings ordered visible=\(window.isVisible) key=\(window.isKeyWindow) main=\(window.isMainWindow) frame=\(window.frame)")
     }
 
     private func centerOnActiveScreen(_ window: NSWindow) {

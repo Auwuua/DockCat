@@ -82,6 +82,12 @@ final class DockCatApplication: NSObject, NSApplicationDelegate {
         RuntimeDiagnostics.record("activitySpace frame=\(activitySpace.screenFrame) visible=\(activitySpace.visibleFrame) edge=\(activitySpace.dockEdge) entrance=\(activitySpace.entrancePoint)")
         iconController.showSleepIcon()
         catWindow.hide()
+#if DEBUG
+        if showDebugOutingGiftPreviewIfRequested() {
+            startReminderPolling()
+            return
+        }
+#endif
         if !restoreActiveOutingIfNeeded() {
             scheduleStartupStretch()
         }
@@ -114,6 +120,49 @@ final class DockCatApplication: NSObject, NSApplicationDelegate {
     func applicationDockMenu(_ sender: NSApplication) -> NSMenu? {
         dockMenuController.applicationDockMenu(sender)
     }
+
+#if DEBUG
+    private func showDebugOutingGiftPreviewIfRequested() -> Bool {
+        guard let collectableID = debugOutingGiftPreviewID() else {
+            return false
+        }
+        guard let collectable = outingCatalog.collectables.first(where: { $0.id == collectableID }) else {
+            DockCatLog.app.warning("Debug outing gift preview collectable not found: \(collectableID)")
+            return false
+        }
+        let pose = renderer.randomPose(for: .dialogue)
+        let point = startPositionAnchor()
+        stateMachine.updateVisiblePosition(point)
+        catWindow.setImage(pose.image, mirrored: pose.mirrored)
+        catWindow.show(at: point)
+        catWindow.showImageBubble(
+            message: strings.outingReturnCollectable(salutation: settings.userSalutation),
+            image: collectableImage(collectable),
+            imageTitle: strings.collectableName(collectable),
+            primaryTitle: strings.receiveGift,
+            onPrimary: { [weak self] in
+                self?.catWindow.hideBubble()
+            }
+        )
+        RuntimeDiagnostics.record("debug outing gift preview collectableID=\(collectableID)")
+        return true
+    }
+
+    private func debugOutingGiftPreviewID() -> String? {
+        let arguments = ProcessInfo.processInfo.arguments
+        let flag = "--preview-outing-gift"
+        for (index, argument) in arguments.enumerated() {
+            if argument == flag, arguments.indices.contains(index + 1) {
+                return arguments[index + 1]
+            }
+            if argument.hasPrefix("\(flag)=") {
+                let value = String(argument.dropFirst(flag.count + 1))
+                return value.isEmpty ? nil : value
+            }
+        }
+        return nil
+    }
+#endif
 
     private func configureStateMachine() {
         stateMachine = CatStateMachine(
@@ -402,11 +451,15 @@ final class DockCatApplication: NSObject, NSApplicationDelegate {
     }
 
     private func showSettings() {
+        RuntimeDiagnostics.record("showSettings requested")
         settingsWindowController.update(settings: settings)
         settingsWindowController.update(usageStatistics: usageSessionTracker.snapshot)
         settingsWindowController.update(collectableInventory: collectableInventory)
         settingsWindowController.update(dialogueImage: renderer.randomPose(for: .dialogue).image)
-        settingsWindowController.show()
+        DispatchQueue.main.async { [weak self] in
+            RuntimeDiagnostics.record("showSettings presenting")
+            self?.settingsWindowController.show()
+        }
     }
 
     private func statusSnapshot() -> CatStatusSnapshot {
@@ -422,8 +475,16 @@ final class DockCatApplication: NSObject, NSApplicationDelegate {
             guard let self else { return }
             self.activitySpace = self.currentActivitySpace()
             let clamped = self.clampedCatPoint(self.stateMachine.position)
+            let walkRange = self.activitySpace.walkRangeForContent(
+                width: self.catWindow.catFrameSize.width,
+                scope: self.settings.catActivityScope
+            )
+            RuntimeDiagnostics.record(
+                "workspace changed state=\(self.stateMachine.state.description) position=\(self.stateMachine.position) clamped=\(clamped) walkRange=\(walkRange) speed=\(self.settings.walkBaseSpeed)"
+            )
             self.stateMachine.updateVisiblePosition(clamped)
             self.catWindow.setAnchor(clamped)
+            self.catWindow.refreshVisibilityAfterWorkspaceChange()
         }
         dockObserver.start()
     }
@@ -476,6 +537,7 @@ final class DockCatApplication: NSObject, NSApplicationDelegate {
             catWindow.show(at: point)
             showReminder(type)
         case .outing(let phase):
+            iconController.showEmptyIcon()
             applyOutingPhase(phase)
         }
     }
@@ -644,6 +706,7 @@ final class DockCatApplication: NSObject, NSApplicationDelegate {
             catWindow.showImageBubble(
                 message: strings.outingReturnCollectable(salutation: settings.userSalutation),
                 image: collectableImage(collectable),
+                imageTitle: strings.collectableName(collectable),
                 primaryTitle: strings.receiveGift,
                 onPrimary: { [weak self] in
                     self?.finishOutingReturn()

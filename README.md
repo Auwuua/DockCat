@@ -19,7 +19,7 @@ DockCat 是一只住在 macOS 程序坞边的桌面陪伴小猫。
   </tr>
 </table>
 
-当前版本 (v0.6) 面向 macOS 12 及以上系统，支持 Intel Mac 和 Apple Silicon Mac。
+当前版本 (v0.6.1) 面向 macOS 12 及以上系统，支持 Intel Mac 和 Apple Silicon Mac。
 
 Windows 用户可以查看[社区移植版本](https://github.com/yitian-ma/DockCatWin)。
 
@@ -55,11 +55,11 @@ Windows 用户可以查看[社区移植版本](https://github.com/yitian-ma/Dock
 
 生成你想要的小猫形象：
 
-- 我们将生成默认小猫形象的提示词分享在了 [ImageGenerationPrompts.md](ImageGenerationPrompts.md) 中，你可以直接用这些提示词搭配自家猫咪照片，用你喜欢的 AI 图片生成工具创造自己的猫咪形象。如果你希望小猫形象更加写实或者卡通，直接修改提示词的美术风格部分即可。
+- 我们将生成默认小猫形象的提示词分享在了 [图片生成提示词.md](CustomizationGuide/图片生成提示词.md) 中，你可以直接用这些提示词搭配自家猫咪照片，用你喜欢的 AI 图片生成工具创造自己的猫咪形象。如果你希望小猫形象更加写实或者卡通，直接修改提示词的美术风格部分即可。
 - 你也可以以默认小猫的图片作为参照，让 AI 图片生成工具保持姿势不变、将其修改为自己想要的猫咪品种和特征，记得给出图片大小和格式要求。
 - 我们推荐首先生成用于对话场景的猫咪站立形象，以清晰呈现毛色、花纹等特征。
 
-接下来让 DockCat 加载你的小猫资源包。请阅读自定义指导 [CatCustomization.md](CatCustomization.md)。
+接下来让 DockCat 加载你的小猫资源包。请阅读 [自定义指引.md](CustomizationGuide/自定义指引.md)。
 
 - 要让 DockCat 在所有场景下均使用你自己的小猫形象，需要休息、散步、过渡、抱起、对话这五个状态的文件夹里各至少有一张图供加载。
 - DockCat 允许加载不完整的自定义资源包来方便你预览效果，缺失或加载失败的资源类型会自动用默认小猫填充，避免屏幕上出现一只隐形猫猫。
@@ -78,8 +78,8 @@ Xcode 构建命令：
 ```bash
 git clone https://github.com/Auwuua/DockCat.git
 cd DockCat
-xcodebuild -project DockCatApp/DockCat.xcodeproj -scheme DockCat -configuration Debug -derivedDataPath DockCatApp/DerivedDataClean build
-open DockCatApp/DerivedDataClean/Build/Products/Debug/DockCat.app
+xcodebuild -project DockCatApp/DockCat.xcodeproj -scheme DockCat -configuration Debug -derivedDataPath DockCatApp/DerivedDataDebug build
+open DockCatApp/DerivedDataDebug/Build/Products/Debug/DockCat.app
 ```
 
 ## 隐私和数据记录

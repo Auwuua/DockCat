@@ -512,7 +512,6 @@ struct SettingsView: View {
                 if item.isNew {
                     VStack {
                         HStack {
-                            Spacer()
                             Text("New")
                                 .font(.system(size: 10, weight: .semibold))
                                 .padding(.horizontal, 5)
@@ -521,6 +520,7 @@ struct SettingsView: View {
                                 .foregroundStyle(.white)
                                 .clipShape(RoundedRectangle(cornerRadius: 4))
                                 .padding(4)
+                            Spacer()
                         }
                         Spacer()
                     }

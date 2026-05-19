@@ -19,7 +19,7 @@ It rests, stretches, and wanders along the Dock, and can gently remind you to dr
   </tr>
 </table>
 
-The current version (v0.6) supports macOS 12 and later, on both Intel Macs and Apple Silicon Macs.
+The current version (v0.6.1) supports macOS 12 and later, on both Intel Macs and Apple Silicon Macs.
 
 Windows users can check out the [community ported version](https://github.com/yitian-ma/DockCatWin).
 
@@ -55,11 +55,11 @@ Yes! Supporting custom cats was one of our original goals when designing DockCat
 
 To create artwork for your own cat:
 
-- We share the prompts used for the default cat in [ImageGenerationPrompts.md](ImageGenerationPrompts.md). You can pair them with photos of your own cat in your preferred AI image generation tool.
+- We share the prompts used for the default cat in [ImageGenerationPrompts.md](CustomizationGuide/ImageGenerationPrompts.md). You can pair them with photos of your own cat in your preferred AI image generation tool.
 - You can also use the default cat images as pose references and ask an AI image generation tool to keep the pose while changing the breed, colors, and markings. Remember to include image size and file format requirements.
 - We recommend starting with the standing dialogue pose, because it shows the cat's colors and markings most clearly.
 
-Next, let DockCat load your cat asset pack. Please read the customization guide: [CatCustomization.md](CatCustomization.md).
+Next, let DockCat load your cat asset pack. Please read the customization guide: [CatCustomization.md](CustomizationGuide/CatCustomization.md).
 
 - To use your own cat in every scene, provide at least one image for each of these five state folders: resting, walking, transitioning, held, and dialogue.
 - DockCat can load incomplete custom packs for preview. Missing or failed asset types automatically fall back to the default cat, so your little companion will not vanish from the screen.
@@ -78,8 +78,8 @@ Xcode build command:
 ```bash
 git clone https://github.com/Auwuua/DockCat.git
 cd DockCat
-xcodebuild -project DockCatApp/DockCat.xcodeproj -scheme DockCat -configuration Debug -derivedDataPath DockCatApp/DerivedDataClean build
-open DockCatApp/DerivedDataClean/Build/Products/Debug/DockCat.app
+xcodebuild -project DockCatApp/DockCat.xcodeproj -scheme DockCat -configuration Debug -derivedDataPath DockCatApp/DerivedDataDebug build
+open DockCatApp/DerivedDataDebug/Build/Products/Debug/DockCat.app
 ```
 
 ## Privacy And Local Data

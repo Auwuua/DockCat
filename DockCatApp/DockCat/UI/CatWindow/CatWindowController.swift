@@ -35,7 +35,9 @@ final class CatWindowController {
         panel.isOpaque = false
         panel.hasShadow = false
         panel.level = .floating
-        panel.collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle]
+        panel.collectionBehavior = [.canJoinAllSpaces, .fullScreenAuxiliary, .stationary, .ignoresCycle]
+        panel.hidesOnDeactivate = false
+        panel.worksWhenModal = true
         panel.ignoresMouseEvents = false
         updateLayout(catSize: fallbackCatSize)
     }
@@ -53,6 +55,12 @@ final class CatWindowController {
     func setAnchor(_ anchor: CGPoint) {
         let origin = CGPoint(x: anchor.x - catView.frame.minX, y: anchor.y - catView.frame.minY)
         panel.setFrameOrigin(origin)
+    }
+
+    func refreshVisibilityAfterWorkspaceChange() {
+        RuntimeDiagnostics.record("workspace refresh panelVisible=\(panel.isVisible) panelFrame=\(panel.frame)")
+        guard panel.isVisible else { return }
+        panel.orderFrontRegardless()
     }
 
     func setImage(_ image: NSImage?, mirrored: Bool = false, sourceSize: CGSize? = nil) {
@@ -112,14 +120,15 @@ final class CatWindowController {
     func showImageBubble(
         message: String,
         image: NSImage?,
+        imageTitle: String?,
         primaryTitle: String,
         onPrimary: @escaping () -> Void
     ) {
         let minimumHeight: CGFloat = image == nil ? 86 : 180
-        bubbleSize = imageBubbleSize(message: message, width: 260, minimumHeight: minimumHeight, hasImage: image != nil)
+        bubbleSize = imageBubbleSize(message: message, width: 260, minimumHeight: minimumHeight, hasImage: image != nil, hasImageTitle: imageTitle?.isEmpty == false)
         bubbleView.isHidden = false
         updateLayoutPreservingAnchor(catSize: catView.frame.size)
-        bubbleView.configureImage(message: message, image: image, primaryTitle: primaryTitle)
+        bubbleView.configureImage(message: message, image: image, imageTitle: imageTitle, primaryTitle: primaryTitle)
         bubbleView.onPrimary = { _ in onPrimary() }
         bubbleView.onSecondary = nil
     }
@@ -198,10 +207,11 @@ final class CatWindowController {
         return CGSize(width: width, height: max(minimumHeight, ceil(textHeight) + 77))
     }
 
-    private func imageBubbleSize(message: String, width: CGFloat, minimumHeight: CGFloat, hasImage: Bool) -> CGSize {
+    private func imageBubbleSize(message: String, width: CGFloat, minimumHeight: CGFloat, hasImage: Bool, hasImageTitle: Bool) -> CGSize {
         let textHeight = measuredTextHeight(message, width: width - 20)
-        let imageBlockHeight: CGFloat = hasImage ? 96 : 0
-        return CGSize(width: width, height: max(minimumHeight, ceil(textHeight) + imageBlockHeight + 64))
+        let imageBlockHeight: CGFloat = hasImage ? 80 : 0
+        let imageTitleHeight: CGFloat = hasImage && hasImageTitle ? 20 : 0
+        return CGSize(width: width, height: max(minimumHeight, ceil(textHeight) + imageBlockHeight + imageTitleHeight + 64))
     }
 
     private func measuredTextHeight(_ text: String, width: CGFloat) -> CGFloat {

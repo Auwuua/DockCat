@@ -5,6 +5,7 @@ final class SpeechBubbleView: NSView {
     private let label = NSTextField(labelWithString: "")
     private let inputRow = NSStackView()
     private let imageView = NSImageView()
+    private let imageTitleLabel = NSTextField(labelWithString: "")
     private let valueLabel = NSTextField(labelWithString: "")
     private let stepper = NSStepper()
     private let minuteLabel = NSTextField(labelWithString: "分钟")
@@ -13,9 +14,11 @@ final class SpeechBubbleView: NSView {
     private var primaryTopToLabel: NSLayoutConstraint!
     private var primaryTopToInput: NSLayoutConstraint!
     private var primaryTopToImage: NSLayoutConstraint!
+    private var primaryTopToImageTitle: NSLayoutConstraint!
     private var secondaryTopToLabel: NSLayoutConstraint!
     private var secondaryTopToInput: NSLayoutConstraint!
     private var secondaryTopToImage: NSLayoutConstraint!
+    private var secondaryTopToImageTitle: NSLayoutConstraint!
     private var primaryToSecondary: NSLayoutConstraint!
     private var primaryTrailingSingle: NSLayoutConstraint!
     private var equalButtonWidths: NSLayoutConstraint!
@@ -51,6 +54,12 @@ final class SpeechBubbleView: NSView {
         stepper.action = #selector(stepperChanged)
         imageView.imageScaling = .scaleProportionallyUpOrDown
         imageView.isHidden = true
+        imageTitleLabel.alignment = .center
+        imageTitleLabel.lineBreakMode = .byTruncatingTail
+        imageTitleLabel.maximumNumberOfLines = 1
+        imageTitleLabel.font = .systemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+        imageTitleLabel.textColor = .labelColor
+        imageTitleLabel.isHidden = true
         inputRow.orientation = .horizontal
         inputRow.alignment = .centerY
         inputRow.spacing = 6
@@ -66,7 +75,7 @@ final class SpeechBubbleView: NSView {
         primary.action = #selector(primaryTapped)
         secondary.action = #selector(secondaryTapped)
 
-        for view in [label, inputRow, imageView, primary, secondary] {
+        for view in [label, inputRow, imageView, imageTitleLabel, primary, secondary] {
             view.translatesAutoresizingMaskIntoConstraints = false
             addSubview(view)
         }
@@ -77,9 +86,11 @@ final class SpeechBubbleView: NSView {
         primaryTopToLabel = primary.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 8)
         primaryTopToInput = primary.topAnchor.constraint(equalTo: inputRow.bottomAnchor, constant: 8)
         primaryTopToImage = primary.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8)
+        primaryTopToImageTitle = primary.topAnchor.constraint(equalTo: imageTitleLabel.bottomAnchor, constant: 4)
         secondaryTopToLabel = secondary.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 8)
         secondaryTopToInput = secondary.topAnchor.constraint(equalTo: inputRow.bottomAnchor, constant: 8)
         secondaryTopToImage = secondary.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8)
+        secondaryTopToImageTitle = secondary.topAnchor.constraint(equalTo: imageTitleLabel.bottomAnchor, constant: 4)
         primaryToSecondary = secondary.leadingAnchor.constraint(equalTo: primary.trailingAnchor, constant: 8)
         primaryTrailingSingle = primary.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
         equalButtonWidths = primary.widthAnchor.constraint(equalTo: secondary.widthAnchor)
@@ -93,8 +104,11 @@ final class SpeechBubbleView: NSView {
             valueLabel.widthAnchor.constraint(equalToConstant: 42),
             imageView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 0),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imageView.widthAnchor.constraint(equalToConstant: 96),
-            imageView.heightAnchor.constraint(equalToConstant: 96),
+            imageView.widthAnchor.constraint(equalToConstant: 80),
+            imageView.heightAnchor.constraint(equalToConstant: 80),
+            imageTitleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 2),
+            imageTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            imageTitleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
             primaryTopToLabel,
             primary.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             secondaryTopToLabel,
@@ -129,15 +143,19 @@ final class SpeechBubbleView: NSView {
         inputRow.isHidden = true
         imageView.isHidden = true
         imageView.image = nil
+        imageTitleLabel.stringValue = ""
+        imageTitleLabel.isHidden = true
         primaryTopToInput.isActive = false
         primaryTopToImage.isActive = false
+        primaryTopToImageTitle.isActive = false
         primaryTopToLabel.isActive = true
         secondaryTopToInput.isActive = false
         secondaryTopToImage.isActive = false
+        secondaryTopToImageTitle.isActive = false
         secondaryTopToLabel.isActive = true
     }
 
-    func configureImage(message: String, image: NSImage?, primaryTitle: String) {
+    func configureImage(message: String, image: NSImage?, imageTitle: String?, primaryTitle: String) {
         label.stringValue = message
         primary.title = primaryTitle
         secondary.title = ""
@@ -145,15 +163,20 @@ final class SpeechBubbleView: NSView {
         inputRow.isHidden = true
         imageView.image = image
         imageView.isHidden = image == nil
+        let title = imageTitle?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        imageTitleLabel.stringValue = title
+        imageTitleLabel.isHidden = image == nil || title.isEmpty
         primaryTrailingSingle.isActive = true
         primaryToSecondary.isActive = false
         equalButtonWidths.isActive = false
         primaryTopToLabel.isActive = image == nil
         primaryTopToInput.isActive = false
-        primaryTopToImage.isActive = image != nil
+        primaryTopToImage.isActive = image != nil && imageTitleLabel.isHidden
+        primaryTopToImageTitle.isActive = image != nil && !imageTitleLabel.isHidden
         secondaryTopToLabel.isActive = image == nil
         secondaryTopToInput.isActive = false
-        secondaryTopToImage.isActive = image != nil
+        secondaryTopToImage.isActive = image != nil && imageTitleLabel.isHidden
+        secondaryTopToImageTitle.isActive = image != nil && !imageTitleLabel.isHidden
     }
 
     func configureInput(message: String, value: String, primaryTitle: String, secondaryTitle: String, minuteUnit: String = "分钟") {
@@ -168,6 +191,8 @@ final class SpeechBubbleView: NSView {
         inputRow.isHidden = false
         imageView.isHidden = true
         imageView.image = nil
+        imageTitleLabel.stringValue = ""
+        imageTitleLabel.isHidden = true
         secondary.isHidden = false
         primaryTrailingSingle.isActive = false
         primaryToSecondary.isActive = true
@@ -175,9 +200,11 @@ final class SpeechBubbleView: NSView {
         primaryTopToLabel.isActive = false
         primaryTopToInput.isActive = true
         primaryTopToImage.isActive = false
+        primaryTopToImageTitle.isActive = false
         secondaryTopToLabel.isActive = false
         secondaryTopToInput.isActive = true
         secondaryTopToImage.isActive = false
+        secondaryTopToImageTitle.isActive = false
     }
 
     @objc private func primaryTapped() {

@@ -64,8 +64,8 @@ final class AssetPackLoader {
             id: "default-lizz",
             name: "Lizz",
             author: "Auwuua",
-            canvasWidth: 1254,
-            canvasHeight: 1254,
+            canvasWidth: 1280,
+            canvasHeight: 1280,
             defaultAnchor: .init(x: 0.5, y: 0.88),
             poses: .init(resting: "poses/resting", held: "poses/held", dialogue: "poses/dialogue", transition: "poses/transition"),
             animations: .init(
@@ -377,8 +377,8 @@ final class AssetPackLoader {
         manifest.id == "default-lizz"
             && manifest.name == "Lizz"
             && manifest.author == "Auwuua"
-            && manifest.canvasWidth == 1254
-            && manifest.canvasHeight == 1254
+            && manifest.canvasWidth == 1280
+            && manifest.canvasHeight == 1280
             && manifest.defaultAnchor == .init(x: 0.5, y: 0.88)
             && manifest.poses == .init(
                 resting: "poses/resting",
@@ -403,8 +403,8 @@ final class AssetPackLoader {
           "id": "default-lizz",
           "name": "Lizz",
           "author": "Auwuua",
-          "canvas_width": 1254,
-          "canvas_height": 1254,
+          "canvas_width": 1280,
+          "canvas_height": 1280,
           "default_anchor": {
             "x": 0.5,
             "y": 0.88
