@@ -1,0 +1,282 @@
+[
+  {
+    "id": "met_friend_tabby_slow_blink",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只虎斑朋友啦，我们轻轻眨了眨眼。我们猫咪见到朋友时，会用慢慢眨眼打招呼呢。",
+    "english_description": "I met a tabby friend. We blinked slowly at each other. Cats greet friends with slow, gentle blinks.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_black_cat_tail_up",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只黑猫朋友啦，它尾巴竖得高高的。我们猫咪这样靠近的时候，是在说我很开心见到你。",
+    "english_description": "I met a black cat friend. Their tail was held high. When cats approach like that, it means they are happy to see you.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_orange_cat_sun",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只橘猫朋友啦，它提醒我回来告诉你：阳光好的时候要记得出门晒晒太阳哦。",
+    "english_description": "I met an orange cat friend. They reminded me to tell you to step outside for some sunlight when the weather is bright.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_tuxedo_window_light",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只奶牛猫朋友啦，它说偶尔看看窗外的光，眼睛会比一直盯着屏幕舒服。",
+    "english_description": "I met a tuxedo cat friend. They said looking at window light for a moment can feel better than staring at a screen nonstop.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_corgi_tiny_steps",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只短腿狗朋友啦，它说自己虽然腿短，但是散步时小步走得很认真。",
+    "english_description": "I met a short-legged dog friend. They said their legs are small, but every walking step is very serious.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_old_cat_whiskers",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只老猫朋友啦，它的胡须好神气。我们猫咪的胡须可以帮忙感觉缝隙宽不宽，像随身带着小尺子。",
+    "english_description": "I met an older cat friend. Their whiskers looked very proud. Cat whiskers can help us feel how wide a gap is, like carrying tiny rulers.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_gray_cat_stretch",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只灰猫朋友啦，它提醒我回来告诉你：工作久了要站起来伸伸背，肩膀会开心一点。",
+    "english_description": "I met a gray cat friend. They reminded me to tell you that a small stretch break can make busy shoulders feel happier.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_calico_purr",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只三花朋友啦，它小声呼噜呼噜。猫咪开心、放松，或者想安慰自己时都可能呼噜。",
+    "english_description": "I met a calico friend. They purred softly. Cats may purr when happy, relaxed, or trying to comfort themselves.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_white_cat_nap",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只白猫朋友啦，它说短短休息一下也很重要，闭上眼睛听一会儿风就很好。",
+    "english_description": "I met a white cat friend. They said even a short rest matters, and closing your eyes to listen to the wind is nice.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_puppy_sniffing",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只小狗朋友啦，它一路闻得很认真。它说狗狗散步时闻味道，就像在读路上的新闻。",
+    "english_description": "I met a puppy friend. They sniffed very carefully. They said smelling things on a walk is like reading the street news.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_neighbor_dog_song",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听见邻居家的狗在唱歌，声音很努力，但是我觉得不太好听。",
+    "english_description": "I heard the neighbor's dog singing. It worked very hard, but I do not think it sounded very good.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_puddle_drip",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听见屋檐下面滴答滴答的声音，数到第十下的时候突然忘了自己数到哪里。",
+    "english_description": "I heard little drips under the eaves. By the tenth drip, I forgot what number I was counting.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "saw_sparrow_meeting",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我看到几只麻雀在开会，它们讨论得很认真，但是好像不欢迎我旁听。",
+    "english_description": "I saw a few sparrows having a serious meeting, but they did not seem to welcome me listening in.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_bicycle_bell",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听到自行车铃叮了一声，路上的空气好像也跟着亮了一下。",
+    "english_description": "I heard a bicycle bell ring once. Even the air on the road seemed to brighten for a moment.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "saw_cloud_snack",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我看到一朵云像一块很大的零食，盯着它看久了，我有点饿。",
+    "english_description": "I saw a cloud shaped like a big snack. After looking at it for a while, I got a little hungry.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "saw_window_plant_dancing",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我看到窗台上的小植物被风吹得摇来摇去，像在跳一支很安静的舞。",
+    "english_description": "I saw a little window plant swaying in the wind, like it was doing a very quiet dance.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_delivery_cart",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听见送货小车咕噜咕噜经过，它的轮子听起来比它本人还忙。",
+    "english_description": "I heard a delivery cart rumbling past. Its wheels sounded even busier than the cart itself.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "saw_laundry_flag",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我看到一件晾着的衣服被风吹起来，好像在认真挥旗。",
+    "english_description": "I saw a hanging shirt lift in the wind, like it was seriously waving a flag.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "saw_pebble_in_puddle",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我在小水洼里看到一颗圆圆的石子，它看起来像把自己藏进了一面小镜子。",
+    "english_description": "I saw a round pebble in a puddle. It looked like it had tucked itself into a tiny mirror.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_elevator_ding",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听见电梯叮的一声，等了一会儿，没有人出来，可能是电梯自己到站了。",
+    "english_description": "I heard an elevator ding. I waited, but nobody came out. Maybe the elevator arrived for itself.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_box_check",
+    "event_type": "small_adventure",
+    "chinese_description": "我检查了一个空纸盒，里面没有宝物，但是回声听起来很像另一个我在说话。",
+    "english_description": "I checked an empty cardboard box. There was no treasure inside, but the echo sounded like another me talking.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_shadow_pounce",
+    "event_type": "small_adventure",
+    "chinese_description": "我扑了一下自己的影子，它躲得很快。我觉得它可能也练习过。",
+    "english_description": "I pounced at my own shadow. It dodged very quickly. I think it may have practiced too.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_leaf_chase",
+    "event_type": "small_adventure",
+    "chinese_description": "我追了一片跑得很快的叶子，追到一半它突然停下，我也只好装作刚好路过。",
+    "english_description": "I chased a very fast leaf. Halfway through, it suddenly stopped, so I pretended I was just passing by.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_step_count",
+    "event_type": "small_adventure",
+    "chinese_description": "我认真数了几级台阶，数到后来觉得每一级台阶长得都差不多。",
+    "english_description": "I carefully counted some steps. After a while, I decided every step looked almost the same.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_gate_gap",
+    "event_type": "small_adventure",
+    "chinese_description": "我研究了一下门缝有多宽，胡须说可以过去，但是我的心情说先不要。",
+    "english_description": "I studied how wide a gate gap was. My whiskers said I could fit, but my mood said not yet.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_bench_patrol",
+    "event_type": "small_adventure",
+    "chinese_description": "我巡逻了一张长椅，确认它今天也在好好当一张长椅。",
+    "english_description": "I patrolled a bench and confirmed it was doing a good job being a bench today.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_tiny_hill",
+    "event_type": "small_adventure",
+    "chinese_description": "我爬上一个很小的坡，站在上面看了一会儿，感觉自己稍微伟大了一点。",
+    "english_description": "I climbed a very small slope and stood there for a while. I felt a little bit grand.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_sign_sniff",
+    "event_type": "small_adventure",
+    "chinese_description": "我闻了闻路边的牌子，上面写了什么我看不懂，但它闻起来很正式。",
+    "english_description": "I sniffed a sign by the road. I could not read what it said, but it smelled very official.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_roundabout",
+    "event_type": "small_adventure",
+    "chinese_description": "我绕着一个花盆走了一圈，走完发现自己回到了刚才的地方，很神奇。",
+    "english_description": "I walked all the way around a flowerpot. When I finished, I was back where I started. Very mysterious.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_doormat_guard",
+    "event_type": "small_adventure",
+    "chinese_description": "我守了一会儿门垫，没有什么事情发生，所以我觉得自己守得很好。",
+    "english_description": "I guarded a doormat for a while. Nothing happened, so I think I guarded it very well.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_rabbit_ears",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只兔子朋友啦，它耳朵动得很认真。它说兔子的耳朵可以帮忙听声音，也能帮忙散热。",
+    "english_description": "I met a rabbit friend. Their ears moved very seriously. They said rabbit ears help with hearing and also help them cool down.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_spotted_cat_scent",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只斑点猫朋友啦，我们一起闻了闻路边的角落。猫咪会用气味记住很多小消息。",
+    "english_description": "I met a spotted cat friend. We sniffed a corner by the road together. Cats remember many little messages through scent.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_shiba_trot",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只柴犬朋友啦，它走路认真得像是去上班。它提醒我回来告诉你，忙的时候也可以暂停一下稍微走一走。",
+    "english_description": "I met a shiba friend. They walked like they were going to work very seriously. They reminded me to tell you that even on busy days, a short slow walk can help.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "met_friend_round_pigeon_distance",
+    "event_type": "met_friend",
+    "chinese_description": "我遇到一只圆圆的鸽子朋友，它一直保持一点距离。它说有些鸟会用小跳步调整安全距离，很有礼貌。",
+    "english_description": "I met a round pigeon friend who kept a little distance. They said some birds use tiny hops to adjust their safe space, which felt very polite.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_paper_bag_rustle",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听见一个纸袋沙沙响了一下，走近看才发现它只是被风翻了个身。",
+    "english_description": "I heard a paper bag rustle. When I got closer, I found it had only turned over in the wind.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "saw_tiny_sticker",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我看到地上贴着一张小贴纸，它已经有点旧了，但还在努力粘住自己。",
+    "english_description": "I saw a tiny sticker on the ground. It was a little old, but it was still trying hard to stay stuck.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "heard_key_jingle",
+    "event_type": "heard_or_seen",
+    "chinese_description": "我听见钥匙叮叮当当地响，声音像一小串会走路的星星。",
+    "english_description": "I heard keys jingling. They sounded like a tiny bunch of walking stars.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_leaf_boat",
+    "event_type": "small_adventure",
+    "chinese_description": "我和一只瓢虫玩了一会儿，它走得很小心，我也把爪子放得很小心。",
+    "english_description": "I played with a ladybug for a little while. It walked very carefully, so I placed my paws very carefully too.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_curb_balance",
+    "event_type": "small_adventure",
+    "chinese_description": "我沿着院墙走了一小段，走得很稳，感觉尾巴今天也很会帮忙。",
+    "english_description": "I walked along a garden wall for a little while. I was very steady, and I think my tail helped very well today.",
+    "author": "Auwuua"
+  },
+  {
+    "id": "small_adventure_corner_peek",
+    "event_type": "small_adventure",
+    "chinese_description": "我观察了一会儿蚂蚁们工作，它们排队搬东西，好像每一只都知道自己要去哪里。",
+    "english_description": "I watched some ants work for a while. They lined up to carry things, and every one of them seemed to know exactly where to go.",
+    "author": "Auwuua"
+  }
+]

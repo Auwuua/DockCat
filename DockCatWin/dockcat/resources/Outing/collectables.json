@@ -1,0 +1,234 @@
+[
+  {
+    "id": "leaf",
+    "chinese_name": "树叶",
+    "english_name": "Leaf",
+    "rarity": 1,
+    "author": "Auwuua",
+    "image_path": "collectables/leaf.png"
+  },
+  {
+    "id": "pebble",
+    "chinese_name": "鹅卵石",
+    "english_name": "Pebble",
+    "rarity": 1,
+    "author": "Auwuua",
+    "image_path": "collectables/pebble.png"
+  },
+  {
+    "id": "small_feather",
+    "chinese_name": "羽毛",
+    "english_name": "Feather",
+    "rarity": 1,
+    "author": "Auwuua",
+    "image_path": "collectables/feather.png"
+  },
+  {
+    "id": "pretty_button",
+    "chinese_name": "漂亮纽扣",
+    "english_name": "Pretty Button",
+    "rarity": 2,
+    "author": "Auwuua",
+    "image_path": "collectables/pretty_button.png"
+  },
+  {
+    "id": "small_pinecone",
+    "chinese_name": "松果",
+    "english_name": "Pinecone",
+    "rarity": 1,
+    "author": "Auwuua",
+    "image_path": "collectables/pinecone.png"
+  },
+  {
+    "id": "twig",
+    "chinese_name": "小树枝",
+    "english_name": "Twig",
+    "rarity": 1,
+    "author": "Auwuua",
+    "image_path": "collectables/twig.png"
+  },
+  {
+    "id": "flyer",
+    "chinese_name": "传单",
+    "english_name": "Flyer",
+    "rarity": 1,
+    "author": "Auwuua",
+    "image_path": "collectables/flyer.png"
+  },
+  {
+    "id": "colorful_bottle_cap",
+    "chinese_name": "彩色瓶盖",
+    "english_name": "Bottle Cap",
+    "rarity": 2,
+    "author": "Auwuua",
+    "image_path": "collectables/colorful_bottle_cap.png"
+  },
+  {
+    "id": "shell_chip",
+    "chinese_name": "贝壳碎片",
+    "english_name": "Shell Chip",
+    "rarity": 2,
+    "author": "Auwuua",
+    "image_path": "collectables/shell_chip.png"
+  },
+  {
+    "id": "marble",
+    "chinese_name": "玻璃球",
+    "english_name": "Marble",
+    "rarity": 2,
+    "author": "Auwuua",
+    "image_path": "collectables/marble.png"
+  },
+  {
+    "id": "patterned_ribbon",
+    "chinese_name": "花纹缎带",
+    "english_name": "Ribbon",
+    "rarity": 2,
+    "author": "Auwuua",
+    "image_path": "collectables/patterned_ribbon.png"
+  },
+  {
+    "id": "wooden_whistle",
+    "chinese_name": "木哨子",
+    "english_name": "Wooden Whistle",
+    "rarity": 2,
+    "author": "Auwuua",
+    "image_path": "collectables/wooden_whistle.png"
+  },
+  {
+    "id": "dried_flower",
+    "chinese_name": "干花",
+    "english_name": "Dried Flower",
+    "rarity": 3,
+    "author": "Auwuua",
+    "image_path": "collectables/dried_flower.png"
+  },
+  {
+    "id": "toy_fish",
+    "chinese_name": "玩具小鱼",
+    "english_name": "Toy Fish",
+    "rarity": 3,
+    "author": "Auwuua",
+    "image_path": "collectables/toy_fish.png"
+  },
+  {
+    "id": "engraved_bell",
+    "chinese_name": "铃铛",
+    "english_name": "Engraved Bell",
+    "rarity": 3,
+    "author": "Auwuua",
+    "image_path": "collectables/engraved_bell.png"
+  },
+  {
+    "id": "crescent_pendant",
+    "chinese_name": "月牙挂坠",
+    "english_name": "Crescent Pendant",
+    "rarity": 4,
+    "author": "Auwuua",
+    "image_path": "collectables/crescent_pendant.png"
+  },
+  {
+    "id": "alpaca_plush",
+    "chinese_name": "羊驼玩偶",
+    "english_name": "Alpaca Plush",
+    "rarity": 4,
+    "author": "Auwuua",
+    "image_path": "collectables/alpaca_plush.png"
+  },
+  {
+    "id": "chipmunk_plush",
+    "chinese_name": "花栗鼠玩偶",
+    "english_name": "Chipmunk Plush",
+    "rarity": 5,
+    "author": "Auwuua",
+    "image_path": "collectables/chipmunk_plush.png"
+  },
+  {
+    "id": "pinwheel",
+    "chinese_name": "纸风车",
+    "english_name": "Pinwheel",
+    "rarity": 3,
+    "author": "Auwuua",
+    "image_path": "collectables/pinwheel.png"
+  },
+  {
+    "id": "paw_badge",
+    "chinese_name": "猫爪徽章",
+    "english_name": "Paw Badge",
+    "rarity": 3,
+    "author": "Auwuua",
+    "image_path": "collectables/paw_badge.png"
+  },
+  {
+    "id": "tiny_bottle",
+    "chinese_name": "小玻璃瓶",
+    "english_name": "Tiny Bottle",
+    "rarity": 3,
+    "author": "Auwuua",
+    "image_path": "collectables/tiny_bottle.png"
+  },
+  {
+    "id": "pearl_hairpin",
+    "chinese_name": "珍珠发夹",
+    "english_name": "Pearl Hairpin",
+    "rarity": 4,
+    "author": "Auwuua",
+    "image_path": "collectables/pearl_hairpin.png"
+  },
+  {
+    "id": "compass",
+    "chinese_name": "指南针",
+    "english_name": "Compass",
+    "rarity": 4,
+    "author": "Auwuua",
+    "image_path": "collectables/compass.png"
+  },
+  {
+    "id": "tiny_porcelain_cat",
+    "chinese_name": "小瓷猫",
+    "english_name": "Porcelain Cat",
+    "rarity": 4,
+    "author": "Auwuua",
+    "image_path": "collectables/tiny_porcelain_cat.png"
+  },
+  {
+    "id": "wand",
+    "chinese_name": "魔杖",
+    "english_name": "Wand",
+    "rarity": 5,
+    "author": "Auwuua",
+    "image_path": "collectables/wand.png"
+  },
+  {
+    "id": "firefly_amber",
+    "chinese_name": "萤火琥珀",
+    "english_name": "Firefly Amber",
+    "rarity": 5,
+    "author": "Auwuua",
+    "image_path": "collectables/firefly_amber.png"
+  },
+  {
+    "id": "crystal_petal",
+    "chinese_name": "结晶花瓣",
+    "english_name": "Crystal Petal",
+    "rarity": "X",
+    "author": "Auwuua",
+    "image_path": "collectables/crystal_petal.png"
+  },
+  {
+    "id": "twilight_petal",
+    "chinese_name": "暮色花瓣",
+    "english_name": "Twilight Petal",
+    "rarity": "X",
+    "author": "Auwuua",
+    "image_path": "collectables/twilight_petal.png"
+  },
+  {
+    "id": "starry_petal",
+    "chinese_name": "星空花瓣",
+    "english_name": "Starry Petal",
+    "rarity": "X",
+    "author": "Auwuua",
+    "image_path": "collectables/starry_petal.png"
+  }
+]
