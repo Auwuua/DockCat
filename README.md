@@ -1,91 +1,79 @@
 # DockCat
 
-中文 | [English](README.en.md)
+English | [中文](README.cn.md)
 
-DockCat 是一只住在 macOS 程序坞边的桌面陪伴小猫。
+DockCat is a desktop companion cat that lives by the macOS Dock.
 
-它会在程序坞边休息、伸懒腰、走来走去，也会温柔地提醒你喝水、起身走走。它不追求过多互动或打扰，只想在屏幕上安静地陪你工作、学习。你可以摸摸小猫让它改变姿势，或者用鼠标把它抱到想要的位置。当你需要专注或离开时，可以让小猫出门玩一会儿，它也许会带回来惊喜。
-
-<table>
-  <tr>
-    <td align="center"><img src="README_figs/stretch.jpg" alt="伸懒腰" width="260"></td>
-    <td align="center"><img src="README_figs/walk.jpg" alt="散步" width="260"></td>
-    <td align="center"><img src="README_figs/water_reminder.jpg" alt="喝水提醒" width="260"></td>
-  </tr>
-  <tr>
-    <td align="center">伸懒腰</td>
-    <td align="center">散步</td>
-    <td align="center">喝水提醒</td>
-  </tr>
-</table>
-
-当前版本 (v0.7.0) 面向 macOS 12 及以上系统，支持 Intel Mac 和 Apple Silicon Mac。
-
-Windows 用户可以查看[社区移植版本](https://github.com/yitian-ma/DockCatWin)。
-
-## 快速使用
-
-如果你想让小猫来桌面上快速住下，推荐下载 GitHub Releases 中的 `DockCat.zip`。
-
-1. 打开本仓库的 [Releases](https://github.com/Auwuua/DockCat/releases) 页面。
-2. 下载最新版本的 `DockCat.zip`。
-3. 解压后，把 `DockCat.app` 拖到“应用程序”文件夹，或放在你喜欢的位置。
-4. 第一次启动时，建议右键点击 `DockCat.app`，选择“打开”，再确认打开。
-5. 如果 macOS 提示无法验证开发者，请到“系统设置 > 隐私与安全性”里允许打开。
-
-## 使用指引
-
-- 启动 DockCat 后，会有一只小猫出现在程序坞上沿。
-- 右键点击小猫或应用图标可打开菜单栏。
-- 设置中可修改小猫名字、对你的称呼、显示缩放、提醒间隔和文案、状态时长等。
-- 支持自定义小猫资源包，让 DockCat 变成你自己的猫咪。
-
-小猫会有以下状态：
-
-- 休息：小猫保持一个姿势，如侧卧、揣手手、翻肚皮。
-- 散步：小猫在程序坞上走来走去。
-- 过渡：小猫短暂地伸懒腰或打哈欠。
-- 抱起：用鼠标左键拖动小猫可以把它抱起来移动。
-- 对话：小猫面向你对话，用于提醒模式和出门对话。
-- 出门：小猫按你设定的时长出门玩，并会带回来见闻或礼物。请一定要试试！
-
-## 我能自定义小猫形象吗？
-
-当然可以！这正是我们设计 DockCat 之初就想要支持的事情。
-
-生成你想要的小猫形象：
-
-- 我们将生成默认小猫形象的提示词分享在了 [图片生成提示词.md](CustomizationGuide/图片生成提示词.md) 中，你可以直接用这些提示词搭配自家猫咪照片，用你喜欢的 AI 图片生成工具创造自己的猫咪形象。如果你希望小猫形象更加写实或者卡通，直接修改提示词的美术风格部分即可。
-- 你也可以以默认小猫的图片作为参照，让 AI 图片生成工具保持姿势不变、将其修改为自己想要的猫咪品种和特征，记得给出图片大小和格式要求。
-- 我们推荐首先生成用于对话场景的猫咪站立形象，以清晰呈现毛色、花纹等特征。
-- DockCat 实际上可以读取任意图片，所以你的宠物可以不限于猫 👀
-
-接下来让 DockCat 加载你的资源包。请阅读 [自定义指引.md](CustomizationGuide/自定义指引.md)。
-
-- 要让 DockCat 在所有场景下均使用你自己的小猫形象，需要休息、散步、过渡、抱起、对话这五个状态的文件夹里各至少有一张图供加载。
-- DockCat 允许加载不完整的自定义资源包来方便你预览效果，缺失或加载失败的资源类型会自动用默认小猫填充，避免屏幕上出现一只隐形猫猫。
-- 同一种状态文件夹里的小猫图可以任意增加。当小猫进入任何一种非散步状态时，DockCat 会从相应文件夹的可用图片中随机抽取一张来呈现，所以你甚至可以为小猫的一种状态设计很多种样子。散步状态则会把可用的图片按顺序呈现为循环动画。
-
-如果你在创造或加载自己的资源包时需要帮助，或者想要试试下面展示的其他用户制作的资源包，可以在下方的 [支持和联系我们](#支持和联系我们) 找到我们的联系方式。我们为分享自制资源包的主人准备了专属收藏品哦！
+It rests, stretches, and wanders along the Dock, and can gently remind you to drink water or stand up for a short walk. DockCat is meant to be a quiet little presence on your screen: soft, lightweight, and never too demanding. You can pet the cat to change its pose, or drag it to a cozy spot you like. When you need to focus or leave, you can let the cat play outside for a while, and it may come back with a tiny surprise.
 
 <table>
   <tr>
-    <td align="center"><img src="README_figs/gaolegao.png" alt="糕乐糕" width="160"></td>
-    <td align="center"><img src="README_figs/xiangxiang.png" alt="想想" width="160"></td>
-    <td align="center"><img src="README_figs/eleven.png" alt="十一" width="160"></td>
+    <td align="center"><img src="README_figs/stretch.jpg" alt="Stretch" width="260"></td>
+    <td align="center"><img src="README_figs/walk.jpg" alt="Walk" width="260"></td>
+    <td align="center"><img src="README_figs/water_reminder.jpg" alt="Water reminder" width="260"></td>
   </tr>
   <tr>
-    <td align="center">糕乐糕</td>
-    <td align="center">想想</td>
-    <td align="center">十一</td>
+    <td align="center">Stretch</td>
+    <td align="center">Walk</td>
+    <td align="center">Water reminder</td>
   </tr>
 </table>
 
-## 从源码构建
+The current version (v0.7.0) supports macOS 12 and later, on both Intel Macs and Apple Silicon Macs.
 
-如果你想自己修改小猫的行为逻辑或事件资源，可以从源码构建。
+Windows users can check out the [community ported version](https://github.com/yitian-ma/DockCatWin).
 
-Xcode 构建命令：
+## Quick Start
+
+If you'd like to let the cat move in, we recommend downloading `DockCat.zip` from GitHub Releases.
+
+1. Open this repo's [Releases](https://github.com/Auwuua/DockCat/releases) page.
+2. Download the latest `DockCat.zip`.
+3. Unzip it, then drag `DockCat.app` into Applications or any folder you prefer.
+4. On first launch, right-click `DockCat.app`, choose Open, then confirm.
+5. If macOS says it cannot verify the developer, allow the app in System Settings > Privacy & Security.
+
+## Usage
+
+- After launch, a cat will appear along the upper edge of the Dock.
+- Right-click the cat or the app icon to open the menu.
+- Settings let you change the cat's name, what it calls you, display scale, reminder intervals, and more.
+- Custom cat asset packs are supported, so you can make DockCat look like your own cat.
+
+The cat can switch between these states:
+
+- Resting: the cat holds a pose for a while, such as lying on its side, loafing, or showing its belly.
+- Walking: the cat walks back and forth along the Dock.
+- Transitioning: the cat briefly stretches or yawns.
+- Held: drag the cat with the left mouse button to move it.
+- Dialogue: the cat faces you for reminders and outing conversations.
+- Outing: the cat goes out for the duration you choose, then comes back with something funny. Please try it!
+
+## Can I Customize The Cat?
+
+Yes! Supporting custom cats was one of our original goals when designing DockCat.
+
+To create artwork for your own cat:
+
+- We share the prompts used for the default cat in [ImageGenerationPrompts.md](CustomizationGuide/ImageGenerationPrompts.md). You can pair them with photos of your own cat in your preferred AI image generation tool.
+- You can also use the default cat images as pose references and ask an AI image generation tool to keep the pose while changing the breed, colors, and markings. Remember to include image size and file format requirements.
+- We recommend starting with the standing dialogue pose, because it shows the cat's colors and markings most clearly.
+
+Next, let DockCat load your cat asset pack. Please read the customization guide: [CatCustomization.md](CustomizationGuide/CatCustomization.md).
+
+- To use your own cat in every scene, provide at least one image for each of these five state folders: resting, walking, transitioning, held, and dialogue.
+- DockCat can load incomplete custom packs for preview. Missing or failed asset types automatically fall back to the default cat, so your little companion will not vanish from the screen.
+- You can add as many images as you want to the same state folder. Whenever the cat enters a non-walking state, DockCat randomly picks one available image from that folder. Walking images are played in order as a looping animation.
+
+If you need help creating or loading your own asset pack, you can find our contact information in [Support And Contact](#support-and-contact) below.
+
+PS: Since DockCat can read any image, it does not strictly have to be a cat, right? 👀
+
+## Build From Source
+
+If you want to modify the cat's behavior or event resources, you can build from source.
+
+Xcode build command:
 
 ```bash
 git clone https://github.com/Auwuua/DockCat.git
@@ -94,36 +82,34 @@ xcodebuild -project DockCatApp/DockCat.xcodeproj -scheme DockCat -configuration 
 open DockCatApp/DerivedDataDebug/Build/Products/Debug/DockCat.app
 ```
 
-## 隐私和数据记录
+## Privacy And Local Data
 
-DockCat 是完全在本地运行的桌面 App，不需要联网、不传输数据、不含广告。
+DockCat runs completely locally on your Mac. It does not require network access, transmit data, or include ads.
 
-它只会在你的 Mac 本地存储以下必要数据：
+It stores only the necessary app data on your Mac:
 
-- 你自定义的设置项，如小猫名字、对你的称呼、提醒间隔、默认出门时间等。
-- 使用统计，如陪伴时长、完成喝水/走动提醒次数、小猫出门得到的收藏品等。
-- 你自定义的小猫资源包。
+- Your custom settings, such as the cat's name, what it calls you, reminder intervals, and default outing duration.
+- Your usage statistics, such as companion time, completed water and movement reminders, and collectables the cat brought home.
+- Your custom cat asset packs.
 
-更新 DockCat 时，它会自动读取保存在本地的数据。如果你有自定义资源包，我们建议留好备份，这样最安全。
+When you update DockCat, it automatically reads the app's previous local data. If you use custom asset packs, we recommend keeping your own backup as an extra precaution.
 
-## 许可证
+## License
 
-DockCat 使用 PolyForm Noncommercial License。完整条款见 [LICENSE.txt](LICENSE.txt)。简单来说：
+DockCat uses the PolyForm Noncommercial License. See [LICENSE.txt](LICENSE.txt) for the full terms. In short:
 
-- 你可以自由阅读、复制、修改本项目源码，构建属于自己的 DockCat 版本。
-- 你不可以把 DockCat 或其修改版本用于商业用途，包括销售、收费分发、商业产品捆绑等。商业使用需要另外授权。
-- 如果你公开分发修改版本，应保留原始许可证和版权声明、提供本项目链接，并说明你的修改所基于的 DockCat 版本和你的修改内容。
+- You may freely read, copy, modify, and build your own version of DockCat from this source code.
+- You may not use DockCat or modified versions of it for commercial purposes, including selling it, paid distribution, or bundling it with commercial products. Commercial use requires additional authorization.
+- If you publicly distribute a modified version, you must keep the original license and copyright notice, provide a link to this project, and describe your changes.
 
-## 支持和联系我们
+## Support And Contact
 
-DockCat 仍在积极开发中，我们计划添加更多可自定义的小功能，并持续扩充出门结果列表。
+DockCat is under active development. We plan to add more customizable functions and continue expanding the outing result list.
 
-如果你喜欢 DockCat，欢迎给本项目点星 (本页面右上角)，或[微信赞赏](README_figs/Wechat_donate.jpg)。
+If you enjoy DockCat, please consider starring this project at the top right of this page, or [Buy Me a Coffee](https://buymeacoffee.com/auwuua).
 
-如果你在使用中需要帮助，或者希望以其他方式支持 DockCat，以下是我们的联系方式 (我们在北美时区)：
-- 小红书：熬呜
-- 微信 (如需发送文件)：Frecias
+If you need help while using DockCat, or want to support DockCat in another way, here is how to reach us:
 
-如果你正在学习氛围编程 (vibe coding) 或打算开发自建版本，并希望快速理解本项目，可以在赞赏支持后联系我们获取 DockCat 的设计文档。
+- Email: tianmaizhang@gmail.com
 
-希望 DockCat 能给你想要的柔软陪伴。
+We hope DockCat brings you the soft companionship you love.
